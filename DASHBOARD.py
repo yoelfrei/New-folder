@@ -36,7 +36,7 @@ def make_demo_data(seed: int = 7, days: int = 90) -> pd.DataFrame:
 
 
 st.title("📊 Mini Dashboard (דוגמה)")
-st.caption("דשבורד קטן לדוגמה עם נתוני דמה, פילטרים, מדדים וגרפים.")
+st.caption("דשבורד קטן לדוגמה עם נתוני דמה אמיתיים, פילטרים, מדדים וגרפים.")
 
 df = make_demo_data()
 
