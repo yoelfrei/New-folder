@@ -1,5 +1,6 @@
 import datetime as dt
 
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import plotly.express as px
@@ -33,6 +34,20 @@ def make_demo_data(seed: int = 7, days: int = 90) -> pd.DataFrame:
     df["profit"] = (df["revenue"] - df["cost"]).round(2)
     df["date"] = pd.to_datetime(df["date"]).dt.date
     return df
+
+
+def make_wiz_graph_figure() -> "plt.Figure":
+    x = [1, 2, 3, 4, 5, 6]
+    y = [1, 4, 9, 16, 25, 36]
+
+    fig, ax = plt.subplots(figsize=(8, 4.5))
+    ax.plot(x, y, marker="o", linewidth=2)
+    ax.set_title("Example Graph: y = x^2")
+    ax.set_xlabel("x")
+    ax.set_ylabel("y")
+    ax.grid(True, alpha=0.3)
+    fig.tight_layout()
+    return fig
 
 
 st.title("📊 Mini Dashboard (דוגמה)")
@@ -135,6 +150,10 @@ with right:
         labels={"revenue": "₪", "category": "קטגוריה"},
     )
     st.plotly_chart(fig2, use_container_width=True)
+
+st.divider()
+st.subheader("גרף מ־wiz.py (Matplotlib)")
+st.pyplot(make_wiz_graph_figure(), use_container_width=True)
 
 st.subheader("טבלת נתונים (דגימה)")
 st.dataframe(
