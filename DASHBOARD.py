@@ -51,7 +51,7 @@ def make_wiz_graph_figure() -> "plt.Figure":
 
 
 st.title("📊 Mini Dashboard (דוגמה)")
-st.caption("דשבורד קטן לדוגמה עם נתוני דמה, פילטרים, מדדים וגרפים.")
+st.caption("דשבורד קטנטן   לדוגמה עם נתוני דמה, פילטרים, מדדים וגרפים.")
 
 df = make_demo_data()
 
